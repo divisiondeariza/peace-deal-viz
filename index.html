@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
     <script src="https://d3js.org/d3.v3.min.js"></script>
     <script src="https://raw.githubusercontent.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js"></script>
+    <script src="https://raw.githubusercontent.com/timdream/wordcloud2.js/gh-pages/src/wordcloud2.js"></script>
     <script src="javascripts/main.js"></script>
 
     <title>Las palabras de la paz</title>
@@ -24,22 +25,19 @@
           <h1 id="project_title">Las palabras de la paz</h1>
           <h2 id="project_tagline"></h2>
 
-<!--             <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/divisiondeariza/peace-deal-viz/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/divisiondeariza/peace-deal-viz/tarball/master">Download this project as a tar.gz file</a>
-            </section> -->
+
         </header>
     </div>
 
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+      <p>El tamaño de cada palabra es proporcional al número de la misma en los <a href="https://www.mesadeconversaciones.com.co/">acuerdos de terminación del conflicto con las FARC</a>, si quiere hacer sus propios análisis, el acuerdo en txt lo encuentra <a href="acuerdo.txt">acá</a>, y el código fuente de esta visualización lo encuentra <a href="https://github.com/divisiondeariza/peace-deal-viz">acá</a></p>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
-
-      <div id="chart"></div>
+      <p>Estoy atento a sus opiniones: en twitter me encuentra como <a href="https://twitter.com/DivisionDeAriza">@DivisionDeAriza</a>, o si quiere me puede escribir a <a>divisiondeariza@gmail.com</a>. Si usted cree que puede hacer un aporte interesante a esta visualización, siempre será bien recibido un <a href="https://github.com/divisiondeariza/peace-deal-viz/pull/new/gh-pages">pull request</a></p>
+      <div id="sourrounding_div" style="width:100%;height:700px">
+        <canvas id="canvas"></canvas>
+      </div>
 
       </section>
     </div>
