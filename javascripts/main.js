@@ -10,12 +10,11 @@
 	  					return (!Number.isInteger(parseInt(word))) && (blacklist.indexOf(word.toLowerCase()) ==  -1);
 	  				})
 	  				.map(function(word){
-	  					return word.toLowerCase();
+	  					return word.toLowerCase().replace(/[.,\/#!$%\^\*;:{}=_`~()]/g,"");
 	  				}); 
 
 	  var frequency_dict = {}
 	  wordlist.forEach(function(d){
-	  	//console.log(d)
 	  	if(!frequency_dict[d])
 	  		frequency_dict[d] = 1;
 	  	else
@@ -28,11 +27,15 @@
 	  	  }
 
 	  frequency_list.sort(function(a,b){
-	  	return a.size < b.size
+	  	return a.size < b.size;
 	  })
 	  var fill = d3.scale.category20();
 
-	  console.log(frequency_list);
+	  var svg =d3.select("#sourrounding_div")
+	  			.append("canvas")
+	  			.attr("id", "canvas")
+
+	  console.log(frequency_list.filter(function(elem){return elem[1] > 5}));
 
 		var div = document.getElementById("sourrounding_div");
 
@@ -45,13 +48,15 @@
 
 		var options = 
 		{
-		  list: frequency_list,
+		  list: frequency_list.filter(function(elem){return elem[1] > 10}),
 		  gridSize: 1,  
 		  weightFactor: function(size){
 		  	return size*0.2;
 		  }
 		}
 		WordCloud(document.getElementById('canvas'), options); 
+
+
 
 	});
 	
