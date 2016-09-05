@@ -2,7 +2,9 @@
 
 	d3.text("acuerdo.txt", function(error, text) {
 	  if (error) throw error;
-	  var wordlist = text.split(/\s/g)
+	  var wordlist = text
+	  				.replace("Acuerdo Final", "")
+	  				.split(/\s/g)
 	  				.filter(function(word){
 	  					// console.log(Number.isInteger(word));
 	  					var blacklist = ["", "de","y", "la", "el", "los", "en", "del", "que", "para", "las", "con", "por", "a", "se",
